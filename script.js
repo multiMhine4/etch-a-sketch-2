@@ -24,9 +24,9 @@ createNewGrid(16);
 
 const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => {
-    length = +prompt("New size of grid: ");
+    length = +prompt("New size of grid: ") || 16;
     while (length > 100) {
-        length = +prompt("Too big! Pick a size smaller not bigger than 100: ");
+        length = +prompt("Too big! Pick a size smaller not bigger than 100: ") || 16;
     }
     createNewGrid(length);
 })
