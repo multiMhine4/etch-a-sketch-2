@@ -20,8 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 }
 
 .row {
@@ -32,6 +32,6 @@ body {
 .square {
     background-color: blue;
     aspect-ratio: 1/1;
-    margin: 2px;
+    margin: 1px;
     flex: 1;
 }
