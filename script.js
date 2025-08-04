@@ -1,16 +1,32 @@
 const container = document.querySelector("#container");
 
-for (let row=0; row<16; row++) {
-    let newRow = document.createElement("div");
-    newRow.classList.add("row");
+function createNewGrid(length) {
+    let rows = document.querySelectorAll(".row");
+    rows.forEach((row) => row.remove());
+    
+    for (let row=0; row<length; row++) {
+        let newRow = document.createElement("div");
+        newRow.classList.add("row");
 
-    for (let col=0; col<16; col++) {
-        let newSquare = document.createElement("div");
-        newSquare.classList.add("square");
-        newSquare.addEventListener("mouseover", (e) => {
-            e.target.style['background-color'] = 'yellow'; 
-        })
-        newRow.appendChild(newSquare);
+        for (let col=0; col<length; col++) {
+            let newSquare = document.createElement("div");
+            newSquare.classList.add("square");
+            newSquare.addEventListener("mouseover", (e) => {
+                e.target.style['background-color'] = 'yellow'; 
+            })
+            newRow.appendChild(newSquare);
+        }
+        container.appendChild(newRow);
     }
-    container.appendChild(newRow);
 }
+
+createNewGrid(16);
+
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", () => {
+    length = +prompt("New size of grid: ");
+    createNewGrid(length);
+})
+
+
+

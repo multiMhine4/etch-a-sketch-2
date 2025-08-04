@@ -12,6 +12,10 @@ body {
     align-items: center;
 }
 
+#reset {
+    margin: 12px;
+}
+
 #container {
     display: flex;
     flex-direction: column;
